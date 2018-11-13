@@ -12,6 +12,8 @@
 
 FROM alpine:3.8
 
+EXPOSE 5000
+
 RUN apk --no-cache add \
     python3 \
     py3-pip
