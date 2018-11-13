@@ -3,7 +3,7 @@
 # steps:
 # - [x] simple hello world
 # - [x] python stack
-# - [ ] flask dev server
+# - [x] flask dev server
 # - [ ] prod uwsgi or similar server
 
 # questions:
@@ -13,7 +13,11 @@
 FROM alpine:3.8
 
 RUN apk --no-cache add \
-    python3
+    python3 \
+    py3-pip
+
+RUN pip3 --version
+RUN pip3 install flask
 
 COPY hello.py /hello.py
 
