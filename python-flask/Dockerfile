@@ -4,7 +4,7 @@
 # - [x] simple hello world
 # - [x] python stack
 # - [x] flask dev server
-# - [ ] prod uwsgi or similar server
+# - [x] prod uwsgi or similar server
 
 # questions:
 # - hub has many results for python
@@ -14,9 +14,10 @@ FROM python:3.7-alpine3.8
 
 EXPOSE 5000
 
-RUN pip3 --version
-RUN pip3 install flask
+RUN pip3 install \
+    flask \
+    gunicorn
 
 COPY hello.py /hello.py
 
-CMD ["/hello.py"]
+CMD ["gunicorn", "-w 3", "-b :5000", "hello:app"]
