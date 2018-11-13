@@ -2,7 +2,7 @@
 #
 # steps:
 # - [x] simple hello world
-# - [ ] python stack
+# - [x] python stack
 # - [ ] flask dev server
 # - [ ] prod uwsgi or similar server
 
@@ -12,6 +12,9 @@
 
 FROM alpine:3.8
 
-COPY hello.sh /hello.sh
+RUN apk --no-cache add \
+    python3
 
-CMD ["/hello.sh"]
+COPY hello.py /hello.py
+
+CMD ["/hello.py"]
