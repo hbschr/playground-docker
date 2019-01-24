@@ -5,10 +5,14 @@
 # - [x] python stack
 # - [x] flask dev server
 # - [x] prod uwsgi or similar server
-
-# questions:
-# - hub has many results for python
-
+#
+# ideas / brainstorming:
+# - [ ] possibly run gunicorn behind nginx (install nginx and configure proxy)
+# - [ ] make `-w` configurable
+# - [ ] add configurable domain w/ letsencrypt certificate
+# - [ ] run flask app in kubernetes
+# - [ ] add db container, make flask read from db
+# - [ ] serve js spa which is built in build-env docker (multistage)
 
 FROM python:3.7-alpine3.8
 
