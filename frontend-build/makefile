@@ -32,8 +32,10 @@ run-mac: build git-clone
 
 .PHONY: clean
 clean:
-	$(MAKE) -C $(src) distclean
+	-$(MAKE) -C $(src) distclean
 
 .PHONY: distclean
 distclean: clean
 	rm -rf $(src)
+	rm -f package-lock.json
+	rm -rf node_modules
