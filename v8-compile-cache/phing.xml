@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model xlink:href="/usr/share/php/data/phing/etc/phing-grammar.rng"
+        type="application/xml"
+        schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<project name="Env Test" default="main" basedir=".">
+
+    <target name="main" hidden="true">
+        <phingcall target="npm-env" />
+        <phingcall target="npm-ostmpdir" />
+    </target>
+
+    <target name="npm-env" description="npm script">
+        <exec executable="npm" dir="client" passthru="true" checkreturn="true">
+            <arg value="run" />
+            <arg value="env" />
+        </exec>
+    </target>
+
+    <target name="npm-ostmpdir" description="npm script">
+        <exec executable="npm" dir="client" passthru="true" checkreturn="true">
+            <arg value="run" />
+            <arg value="ostmpdir" />
+        </exec>
+    </target>
+
+</project>

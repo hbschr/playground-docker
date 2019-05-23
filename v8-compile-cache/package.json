@@ -1,0 +1,13 @@
+{
+  "name": "test-os-tmpdir",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "env": "echo $TMPDIR",
+    "ostmpdir": "node -e 'console.log(os.tmpdir())'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
