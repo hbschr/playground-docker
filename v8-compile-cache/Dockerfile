@@ -15,7 +15,7 @@ RUN composer global require phing/phing:2.16.1 \
 # node.js mit Hilfe von nvm installieren
 RUN mkdir /opt/nvm
 ENV NVM_DIR /opt/nvm
-ENV NODE_VERSION 8.6.0
+ENV NODE_VERSION 12.3.0
 RUN curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | /bin/bash \
     && . $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
