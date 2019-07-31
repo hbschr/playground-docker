@@ -1,7 +1,8 @@
 N     := 0
 image := custom-debian:latest
 
-.NOTPARALLEL: prepare
+.NOTPARALLEL:
+
 .PHONY: prepare
 prepare: build clean info
 
