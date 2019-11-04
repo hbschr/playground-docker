@@ -1,4 +1,4 @@
 FROM alpine:latest
 
-ENTRYPOINT ["echo"]
+ENTRYPOINT ["echo", "fixed", "args"]
 CMD ["default", "args"]
